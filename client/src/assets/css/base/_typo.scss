@@ -1,0 +1,149 @@
+@import "media-queries";
+
+h1, .h1 {
+  font-style: normal;
+  font-weight: 1000;
+  font-size: 48px;
+  line-height: 52px;
+
+  &.text-light, .text-light {
+    font-weight: 300;
+  }
+
+  @include breakpoint-down(lg) {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+
+h2, .h2 {
+  font-style: normal;
+  font-weight: 1000;
+  font-size: 32px;
+  line-height: 36px;
+
+  &.text-light, .text-light {
+    font-weight: 300;
+  }
+  @include breakpoint-down(lg) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+h3, .h3 {
+  font-style: normal;
+  font-weight: 1000;
+  font-size: 24px;
+  line-height: 32px;
+
+  &.text-bold {
+    font-weight: 800;
+  }
+
+  &.text-light, .text-light {
+    font-weight: 300;
+  }
+
+  @include breakpoint-down(lg) {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
+
+h4, .h4, p.p1 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+
+  &.text-bold {
+    font-weight: 700;
+  }
+
+  &.text-light, .text-light {
+    font-weight: 200;
+  }
+
+  @include breakpoint-down(lg) {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+h5, .h5, p.p2 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+
+  &.text-bold {
+    font-weight: 700;
+  }
+
+  &.text-light, .text-light {
+    font-weight: 300;
+  }
+}
+
+h6, .h6, p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  @include breakpoint-down(md) {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  &.text-bold {
+    font-weight: 700;
+  }
+
+  &.text-light, .text-light {
+    font-weight: 200;
+  }
+}
+
+p {
+  &.c1 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  &.c2 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+  }
+
+  &.text-light, .text-light {
+    font-weight: 200;
+  }
+}
+p a, .inline-link {
+  display: inline-block;
+  position: relative;
+  transition: theme('transitions.default');
+  @apply text-secondary;
+  &:after {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 1px;
+    position: relative;
+    bottom: 0.37em;
+    opacity: 0.5;
+    @apply bg-secondary;
+    transition: theme('transitions.default');
+  }
+  &:hover {
+    &:after {
+      width: 100%;
+    }
+  }
+}

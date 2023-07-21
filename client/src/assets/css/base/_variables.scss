@@ -1,0 +1,27 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+//Colors
+$white:         #FFFFFF;
+$black:         #000000;
+
+// Gradients
+$gradient-main: linear-gradient(221.84deg, #E9CDBB -5.66%, #C6BFE2 100%);
+
+// Box shadows
+$shadow-button-light: 0px 8px 20px rgba(0, 36, 84, 0.06);
+$shadow-button-dark: 0px 8px 20px rgba(0, 36, 84, 0.2);
+
+
+:root {
+  --moon-transform-x: 176px;
+  --moon-transform-y: 0px;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --moon-transform-x: -53px;
+    --moon-transform-y: 147px;
+  }
+}

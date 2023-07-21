@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+//Globals
+@import "base/variables";
+@import "base/media-queries";
+@import 'base/utilites';
+@import 'base/globals';
+@import 'base/table';
+
+// Components
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'base/typo';
+
+input {
+  width: 100%;
+  padding: 10px 20px;
+  color: black;
+  border-radius: 10px;
+  &:focus {
+    outline: unset;
+    box-shadow: unset;
+    border: unset;
+  }
+}

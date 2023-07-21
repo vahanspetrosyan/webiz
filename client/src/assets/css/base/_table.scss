@@ -1,0 +1,77 @@
+@import "media-queries";
+
+table {
+  background: #1D1E26;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  width: 100%;
+  overflow: hidden;
+
+  thead {
+    tr {
+      border-bottom: 1px solid #23242B;
+      background: rgba(35, 36, 43, 0.5);
+
+      th {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: #BCB8E3;
+        padding: 16px;
+        text-align: left;
+        @include breakpoint-down(lg) {
+          padding: 16px 8px;
+        }
+
+        &:first-child {
+          padding-left: 24px;
+        }
+
+        &:last-child {
+          padding-right: 24px;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid #23242B;
+
+      &:last-child {
+        border-bottom: unset;
+      }
+
+      td {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        color: #FFFFFF;
+        padding: 16px;
+        text-align: left;
+        @include breakpoint-down(lg) {
+          padding: 16px 8px;
+        }
+
+        &:first-child {
+          padding-left: 24px;
+        }
+
+        &:last-child {
+          padding-right: 24px;
+
+          svg {
+            margin-right: 0;
+          }
+        }
+
+        svg {
+          display: inline;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
