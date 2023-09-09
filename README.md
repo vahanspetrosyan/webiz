@@ -9,7 +9,7 @@ docker-compose up -d
 
 ### In browser open
 ```
-http://localhost:3050
+http://localhost:3000
 ```
 #
 
