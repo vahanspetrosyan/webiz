@@ -1,8 +1,12 @@
+import * as dotenv from 'dotenv';
+const envPath = process.env.NODE_ENV === 'production' ? 'prod' : 'dev';
+dotenv.config({ path: `.${envPath}.env` });
+
 const DbConfig = {
-  HOST: 'localhost',
-  USER: 'root',
-  PASSWORD: 'root',
-  DB: 'webiz-task',
+  HOST: process.env.MYSQL_HOST ?? '',
+  USER: process.env.MYSQL_USER ?? '',
+  PASSWORD: process.env.MYSQL_PASSWORD ?? '',
+  DB: process.env.MYSQL_DATABASE ?? '',
   dialect: 'mysql',
   pool: {
     max: 5,

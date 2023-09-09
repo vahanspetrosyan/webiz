@@ -1,10 +1,10 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import MainLayout from './components/MainLayout/MainLayout';
 import NotFound from './components/NotFound/NotFound';
 import Home from './modules/Home/Home';
 import Posts from './modules/Posts/Posts';
+import './assets/css/index.scss';
 
 function App (): JSX.Element {
   return (

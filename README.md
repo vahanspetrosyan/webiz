@@ -1,15 +1,22 @@
-# Getting Started
-### First of all go to `docker` directory and run docker command 
-### `docker-compose up`
-### Then go to `server` directory and run command above
-### `npm install`
-### `npm run start`
-### Congratulations the backend server now running at `http://localhost:3003`
-### Then go to `client` directory and run command above
-### `npm install`
-### `npm run start`
-### Congratulations the backend server now running at `http://localhost:3000`
-### Open in browser `http://localhost:3000` and test the application
+## To test app run this commands
+1. `Clone this repository`
+2. `Install docker in your machine`
+
+### Open project folder in terminal and run
+```
+docker-compose up -d
+```
+
+### In browser open
+```
+http://localhost:3050
+```
 #
 
+### For production build run
+```
+docker-compose -f docker-compose-prod.yml up -d
+```
+
 #### Please note the project uses node v18.16.0
+

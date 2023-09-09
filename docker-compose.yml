@@ -1,0 +1,59 @@
+version: "3"
+name: webiz
+services:
+  mysql:
+    container_name: webiz-db
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: webiz-task
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+  nginx:
+    container_name: webiz-nginx
+    depends_on:
+      - api
+      - client
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./.docker/nginx
+    ports:
+      - "3000:80"
+  api:
+    container_name: webiz-api
+    depends_on:
+      - mysql
+    build:
+      dockerfile: .docker/server/Dockerfile.dev
+      context: ./
+    volumes:
+      - ./server:/var/www
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_HOST=webiz-db
+      - MYSQL_DATABASE=webiz-task
+      - MYSQL_PASSWORD=root
+      - MYSQL_PORT=3306
+      - PORT=3003
+      - NODE_ENV=dev
+  client:
+    container_name: webiz-client
+    depends_on:
+      - api
+    stdin_open: true
+    environment:
+      - VITE_API_ENDPOINT=http://localhost:3000/
+      - VITE_API_VERSION=api
+      - GENERATE_SOURCEMAP=false
+    build:
+      dockerfile: .docker/client/Dockerfile.dev
+      context: ./
+    volumes:
+      - ./client:/var/www
+volumes:
+  mysql-data:
+  client:
+  api:
